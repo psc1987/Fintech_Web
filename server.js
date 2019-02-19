@@ -13,6 +13,7 @@ var favicon = require('serve-favicon');
 var COMMON = require('./modules/common');
 var router = require('./modules/router');
 var session = require('express-session');
+var request = require('request');
 
 var i18n = require('i18n');
 
@@ -46,9 +47,46 @@ app.get('/signup', function(req, res){
 })
 
 
+app.get('/getData', function (req, res) {
+  var getUserDataURI = 'https://testapi.open-platform.or.kr/user/me?user_seq_no=1100034706'; // 토큰을 받을 수 있는 restful url
+  var options = {
+      url: getUserDataURI,
+      method : 'GET',
+      headers: {
+          'Authorization' : 'Bearer deea0163-b4de-402c-8e66-1af4ffacb78a'
+      }
+  };
+  request(options, function (error, response, body) {
+      console.log(JSON.parse(body));
+      res.send(body);
+  })
+})
+
+app.get('/authResult', function(req, res){
+  var code = req.query.code;
+  //res.json(code);
+  var option = {
+      method: 'POST',
+      url: 'https://testapi.open-platform.or.kr/oauth/2.0/token',
+      header: 'Content-type: application/x-www-form-urlencoded; charset=UTF-8',
+      form: {
+          code : code,
+          client_id : "l7xx13436dd185b94acfbd830d530816f76b",
+          client_secret: "2a9aa076e2ff4e0e94bfe632676e2d3b",
+          redirect_uri : 'http://localhost:3000/authResult',
+          grant_type : 'authorization_code'
+      }
+  }
+  request(option,function(err,response,body){
+      console.log(body);
+      res.send(body);
+  })
+
+})
+
 router.setRestUrl(app);
 
 server.listen(process.env.PORT || 7777, process.env.IP || "0.0.0.0", function(){
   var addr = server.address();
-  console.log("SNSEHERO.com server running on " +  COMMON.HOST_URL + ":" + addr.port);
+  console.log("server running on " +  COMMON.HOST_URL + ":" + addr.port);
 });
