@@ -7,7 +7,7 @@ var M_FILE='';
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'public/uploads/board');
+    cb(null, 'public/img');
   },
   filename: function (req, file, cb) {
     M_FILE = new Date().getTime() + file.originalname;
