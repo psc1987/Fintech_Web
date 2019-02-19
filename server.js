@@ -38,7 +38,13 @@ app.use(i18n.init);
 app.use(express.static(path.resolve(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.set('views', path.join(__dirname,'views'));
 app.set('view engine', 'ejs');
+
+app.get('/signup', function(req, res){
+  res.render('signup');
+})
+
 
 router.setRestUrl(app);
 
