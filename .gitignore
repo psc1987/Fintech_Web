@@ -8,4 +8,4 @@ node_modules/
 public/uploads/*.*
 
 # file ignore (sub folder)
-modules/common.js
+
