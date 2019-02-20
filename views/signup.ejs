@@ -4,44 +4,65 @@
   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
   crossorigin="anonymous"></script>          
 
-        <table>
-            <tr>
-                <td>이름</td>
-                <input type="text" id = name>
-            </tr>
-            <tr>
-                <td>아이디</td>
-                <input type="text" id = userId>
-            </tr>
-            <tr>    
-                <td>비밀번호</td>
-                <input type="text" id = password>
-            </tr>
-            <button id ="authBtn">모바일 인증받기</button>
-            <div id='result'>
-                <script>
-                    var qs = 
-                        "?response_type=code&" + 
-                        "client_id=l7xx13436dd185b94acfbd830d530816f76b&" +
-                        "redirect_uri=http://localhost:3000/authResult&" +
-                        "scope=login inquiry transfer&" +
-                        "auth_type=0&" +
-                        "invoke_type=ajax";
-                    $("#authBtn").click(function(){
-                        console.log('click')    
-                        $.ajax({
-                            url:'https://testapi.open-platform.or.kr/oauth/2.0/authorize2'+qs,
-                            type:'GET',
-                            data: {},
-                    }).done(function(result){
-                        window.name="parents";  
-                        var tmpwin = window.open("about:blank");
-                        tmpwin.location.href = result.location;
+        
+            <body bgcolor="gold" font-color="red">
+ 
+                <table border='0' width='480px' cellpadding='0' cellspacing='0' align='center'>
+                <center><tr>
+                   <td><h1>Registration For study-system</h1></td>
+                </tr><center>
+                 
+                <table border='0' width='480px' cellpadding='0' cellspacing='0' align='center'>
+                <tr>
+                    <td align='center'>Name:</td>
+                    <td><input type='text' name='name'></td>
+                </tr>
+                <tr> <td>&nbsp;</td> </tr>
+                <tr>
+                    <td align='center'>Password:</td>
+                    <td><input type='text' name='name'></td>
+                </tr>
+                <tr> <td>&nbsp;</td> </tr>
+                <tr>
+                    <td align='center'>Email:</td>
+                    <td><input type='text' name='name'></td>
+                </tr>
+                
+                <tr> <td>&nbsp;</td> </tr>
+                <table border='0' cellpadding='0' cellspacing='0' width='480px' align='center'>
+                <tr>
+                    <td align='center'><input id='authBtn' type='submit' name='REGISTER' value="register"></td>
+                </tr>
+                </table>
+                </table>
+                 
+                
+                </body>
+                    <div id='result'>
+                        <script>
+                         var qs = 
+                          "?response_type=code&" + 
+                           "client_id=l7xx62153d086573456a832a6fb43ba65b64&" +
+                           "redirect_uri=http://localhost:3000/authResult&" +
+                           "scope=login inquiry transfer&" +
+                           "auth_type=0&" +
+                           "invoke_type=ajax";
+                         $("#authBtn").click(function(){
+                            console.log('click')    
+                           $.ajax({
+                              url:'https://testapi.open-platform.or.kr/oauth/2.0/authorize2'+qs,
+                              type:'GET',
+                               data: {},
+                          }).done(function(result){
+                         window.name="parents";  
+                         var tmpwin = window.open("about:blank");
+                         tmpwin.location.href = result.location;
                       
-                    })
-                    })
+                         })
+                         })
                     
-                </script>
-            </div>
-        </table>
+                    </script>
+                    </div>
+                </table>
+            </body>    
 </http>

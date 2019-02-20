@@ -21,8 +21,8 @@ define("EMAIL_ERROR", {"errorCode": 1007, "errorMsg":"Invalid email address." })
 
 define("HOST_URL",  "localhost");
 define("HOST_ID",  "root");
-define("HOST_PASSWORD",  "gksrnr54##");
-define("HOST_DATABASE",  "kisa-fintech");
+define("HOST_PASSWORD",  "wndyd4065");
+define("HOST_DATABASE",  "kisafintech");
 define("MAX_UPLOAD_FILE_SIZE",  4096000);
 
 module.exports = {    
