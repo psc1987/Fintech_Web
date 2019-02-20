@@ -192,7 +192,7 @@ function setBoardItem(response)
 		if (boardItem.m_file.indexOf("http://") != -1) 
 			$("#m_image").attr("src", boardItem.m_file);   
 		else 
-			$("#m_image").attr("src","/uploads/board/"+boardItem.m_file);    	
+			$("#m_image").attr("src","/img/"+boardItem.m_file);    	
 	}    
 	else if(isVideoFile(boardItem.m_file))
 	{
@@ -218,7 +218,7 @@ function setBoardItem(response)
 			$('#m_file').show();		   
 			$("#m_file").html("Play");     
 			$('#m_file').click(function(e) {
-				window.location.href = "/redirect.html?destination=uploads/board/"+boardItem.m_file
+				window.location.href = "/redirect.html?destination=img/"+boardItem.m_file
 			});
 		}
 
@@ -229,7 +229,7 @@ function setBoardItem(response)
 		$("#m_file").html(boardItem.m_file.substring(13,boardItem.m_file.length));
 		$('#m_file').click(function(e) {
 			e.preventDefault();  
-			window.location.href = "/redirect.html?destination=uploads/board/"+boardItem.m_file;
+			window.location.href = "/redirect.html?destination=img/"+boardItem.m_file;
 		});
 
 	}		

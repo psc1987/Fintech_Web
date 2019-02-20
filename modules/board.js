@@ -10,7 +10,7 @@ var storage = multer.diskStorage({
     cb(null, 'public/img');
   },
   filename: function (req, file, cb) {
-    M_FILE = new Date().getTime() + file.originalname;
+    M_FILE = file.originalname;
     cb(null, M_FILE);
   }
 });
