@@ -57,7 +57,10 @@ module.exports = {
           else 
             res.locals.m_page = 0;       
 
-            res.render('board_view'); 
+            if(res.locals.m_category==3)
+              res.render('board_view2');
+            else
+              res.render('board_view'); 
             return;
         });
 
