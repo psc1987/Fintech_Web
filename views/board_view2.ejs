@@ -33,12 +33,13 @@
 					<li><a data-theme="b" id="category1"><%=__("free_board")%></a></li>
 					<li><a data-theme="b"  id="category2"><%=__("best_board")%></a></li>
 					<li><a data-theme="b"  id="category3"><%=__("notice_board")%></a></li>
-					<li><button></button></li>
+					<li><a data-theme="b"  id="category4">제휴샵</a></li>
 				</ul>
 			</div>
 			<div>
 				<input type="button" value="입금" onclick="window.location.href='http://www.localhost:7777/signup'" />
 				<input type="button" value="계좌조회" onclick="window.location.href='http://www.localhost:7777/getData'" />
+				<input type="button" value="포인트 환급" onclick="window.location.href='http://www.localhost:7777/getData'" />
 			</div>
 
 		</div>
@@ -56,7 +57,7 @@
 						<span  id='m_title'>아이디: hunny1126</span>
 						<br>
 						<br>
-						<p id='m_name'>보유 마일리지: 10000점</p>
+						<p id='mile'>보유 마일리지: 10000점</p>
 						<br>           		
 						<span  id='m_rate'>유저등급 : VIP</span>
 						<span id='m_reply' class="ui-li-count ui-body-inherit" style="display:none;"></span>
@@ -67,7 +68,7 @@
 				<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-a ui-li-has-count ui-first-child">  
 					<span id='idx_board'>●</span>&nbsp; |&nbsp;
 					<span  id='m_update_time'>이용중인 스터디방</span>
-					<span id='m_hit' class="ui-li-count ui-body-inherit">기상</span>	
+					<span id='m_hit2' class="ui-li-count ui-body-inherit" style="display:none;">출석완료</span>	
 				</li>
 
 				<li  data-theme="b" class="ui-li-has-count ui-last-child">
@@ -77,7 +78,7 @@
 						<br>
 						<p id='m_name'>설정 마일리지: 20000점/1주일</p>
 						<br>           		
-						<span  id='m_rate'>금주 출석일수 : 3/7</span>
+						<span  id='m_rate2'>금주 출석일수 : 3/7</span>
 						<span id='m_reply' class="ui-li-count ui-body-inherit" style="display:none;"></span>
 					</a>
 				</li>
@@ -86,7 +87,7 @@
 				<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-a ui-li-has-count ui-first-child">  
 					<span id='idx_board'>●</span>&nbsp; |&nbsp;
 					<span  id='m_update_time'>이용중인 스터디방</span>
-					<span id='m_hit' class="ui-li-count ui-body-inherit">과제</span>	
+					<span id='m_hit3' class="ui-li-count ui-body-inherit" style="display:none;">출석완료</span>	
 				</li>
 
 				<li  data-theme="b" class="ui-li-has-count ui-last-child">
@@ -96,7 +97,7 @@
 						<br>
 						<p id='m_name'>설정 마일리지: 10000점/1주일</p>
 						<br>           		
-						<span  id='m_rate'>금주 출석일수 : 4/7</span>
+						<span  id='m_rate3'>금주 출석일수 : 4/7</span>
 						<span id='m_reply' class="ui-li-count ui-body-inherit" style="display:none;"></span>
 					</a>
 				</li>

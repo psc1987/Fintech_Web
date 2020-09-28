@@ -144,24 +144,15 @@ function setBoardList(result)
 
 		var star = parseInt(Math.round(itemData.m_rate));
 
-		var displayStart = '☆';
+		var displayStart = '-';
 
 		switch (star)
 		{
 			case 1:
-			displayStart = '★';
+			displayStart = 'X';
 			break;
 			case 2:
-			displayStart = '★★';
-			break;
-			case 3:
-			displayStart = '★★★';
-			break;
-			case 4:
-			displayStart = '★★★★';
-			break;
-			case 5:
-			displayStart = '★★★★★';
+			displayStart = 'O';
 			break;
 		}
 
@@ -207,7 +198,11 @@ function setUpperButton(m_category)
 		break; 
 		case 3:
 		$('#category3').buttonMarkup({theme: 'a'});     
-		break;                          
+		break;
+		case 4:
+		$('#category4').buttonMarkup({theme: 'a'});     
+		break;
+		                          
 	}  	
 
 	$('#category1').click(function()
@@ -216,7 +211,9 @@ function setUpperButton(m_category)
 	});
 	$('#item2').click(function()
 	{
-		goTo('/board/1/1'); 		
+		$('#m_hit2').show();
+		$('#mile').text('보유 마일리지: 12000점');	
+		$('#m_rate2').text('금주 출석일수 : 4/7');	
 	});
 	$('#category2').click(function()
 	{
@@ -224,11 +221,17 @@ function setUpperButton(m_category)
 	});
 	$('#item3').click(function()
 	{
-		goTo('/board/2/1'); 		
+		$('#m_hit3').show();
+		$('#mile').text('보유 마일리지: 15000점');
+		$('#m_rate3').text('금주 출석일수 : 5/7');	
 	});
 	$('#category3').click(function()
 	{	
-		goTo('/board/3/1'); 		 
+		goTo('/board/3/1');	 
+	});
+	$('#category4').click(function()
+	{	
+		goTo('/board/4/1'); 		 
 	});
 }
 

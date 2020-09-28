@@ -59,6 +59,8 @@ module.exports = {
 
             if(res.locals.m_category==3)
               res.render('board_view2');
+            else if(res.locals.m_category==4)
+              res.render('board_view3');
             else
               res.render('board_view'); 
             return;

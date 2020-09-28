@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<% include head_view %>
+	<link rel="stylesheet" type="text/css" href="http://demo.ciboard.co.kr/pro/assets/css/bootstrap-theme.min.css" />
+	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="http://demo.ciboard.co.kr/pro/views/_layout/cmall_bootstrap/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css" />
+	<link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/ui-lightness/jquery-ui.css" />
+	<link rel="stylesheet" type="text/css" href="http://demo.ciboard.co.kr/pro/views/cmall/bootstrap/css/style.css" />
+
+	<script>
+		var idx_user = <%=idx_user%>;
+		var m_name = '<%=m_name%>';
+
+		var m_category = <%=m_category%>;
+		var m_page = <%=m_page%>;
+	</script>
+
+	<script src="/board_control.js"/></script>
+
+</head>
+
+<body> 
+	<!-- Home -->
+	<div data-role="page" id="boardPage" style="min-height: 500px;">
+
+		<div data-role="header" data-position="inline">
+			<center>
+				<a id='homeBtn'><img id='title'  width='50%' src='/img/title_<%=__("LOCALE")%>.png' style="margin:2px;"></img></a>
+			</center>
+
+			<a id="leftMenuBtn" data-icon="bars" data-iconpos="left" style="margin:5px"><%=__("menu")%></a>
+			<a id="writeBtn" data-icon="plus" data-iconpos="left" style="margin:5px"><%=__("write_post")%></a>
+
+			<div data-role="navbar">
+				<ul>					
+					<li><a data-theme="b" id="category1"><%=__("free_board")%></a></li>
+					<li><a data-theme="b"  id="category2"><%=__("best_board")%></a></li>
+					<li><a data-theme="b"  id="category3"><%=__("notice_board")%></a></li>
+					<li><a data-theme="a"  id="category4">제휴샵</a></li>
+				</ul>
+			</div>
+			<div>
+				<input type="button" value="입금" onclick="window.location.href='http://www.localhost:7777/signup'" />
+				<input type="button" value="계좌조회" onclick="window.location.href='http://www.localhost:7777/getData'" />
+				<input type="button" value="포인트 환급" onclick="window.location.href='http://www.localhost:7777/getData'" />
+			</div>
+
+		</div>
+
+		<div data-role="content" id="adapter" class="ui-content" role="main"> 
+				<ul id="item" data-role="listview" data-divider-theme="a" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="display: block;">
+						<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-a ui-li-has-count ui-first-child">  
+							<span id='idx_board'>●</span>&nbsp; |&nbsp;
+							<span  id='m_update_time'>회원정보</span>
+							<span id='m_hit' class="ui-li-count ui-body-inherit">VIP</span>	
+						</li>
+		
+						<li  data-theme="b" class="ui-li-has-count ui-last-child">
+							<a href="#boardPage" data-transition="slide" class="ui-btn ui-btn-b ui-btn-icon-right ui-icon-carat-r">
+								<span  id='m_title'>아이디: hunny1126</span>
+								<br>
+								<br>
+								<p id='m_name'>보유 마일리지: 15000점</p>
+								<br>           		
+								<span  id='m_rate'>유저등급 : VIP</span>
+								<span id='m_reply' class="ui-li-count ui-body-inherit" style="display:none;"></span>
+							</a>
+						</li>
+					</ul>
+			<ul id="item" data-role="listview" data-divider-theme="a" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="display: block;">
+				<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-a ui-li-has-count ui-first-child">  
+					<span id='idx_board'>●</span>&nbsp; |&nbsp;
+					<span  id='m_update_time'>상품정보</span>
+					<span id='m_hit' class="ui-li-count ui-body-inherit">SHOP</span>	
+				</li>
+
+				<div class="main">
+					<div class="container">
+					   <div class="row">
+										 <div class="col-md-9 col-sm-8 col-xs-12 mb20">
+						  
+						  <!-- 본문 시작 -->
+							 <div id="lists">
+					   <h3>전체상품</h3>
+				 
+				 <div class="cmall-list">
+					<ul class="row">
+								   <li class="col-xs-6 col-sm-6 col-md-4 col-lg-4 cmall-list-col">
+							 <div class="thumbnail" >
+								<a href="http://demo.ciboard.co.kr/pro/item/sample-a" title="샘플상품 A">
+								   <img src="http://demo.ciboard.co.kr/pro/uploads/cache/cmallitem/2015/07/thumb-0b01332b696ac413ef565ebff2b9cf85_420x300.jpg" alt="샘플상품 A" title="샘플상품 A" />
+								</a>
+								<p class="cmall-tit"><a href="http://demo.ciboard.co.kr/pro/item/sample-a" title="샘플상품 A">샘플상품 A</a></p>
+								<p class="cmall-txt">샘플상품 A 의 기본설명입니다</p>
+								<ul class="cmall-detail">
+								   <li><i class="fa fa-heart"></i> <span class="detail-tit">찜</span> 3</li>
+								   <li><i class="fa fa-shopping-cart"></i> <span class="detail-tit">구매</span> 0</li>
+								   <li class="cmall-price pull-right"><span>10,000</span>원</li>
+								</ul>
+							 </div>
+						  </li>
+								   <li class="col-xs-6 col-sm-6 col-md-4 col-lg-4 cmall-list-col">
+							 <div class="thumbnail" >
+								<a href="http://demo.ciboard.co.kr/pro/item/sample-b" title="샘플상품 B">
+								   <img src="http://demo.ciboard.co.kr/pro/uploads/cache/cmallitem/2015/07/thumb-c6920631c7380da6367e9d899d3bf4f5_420x300.jpg" alt="샘플상품 B" title="샘플상품 B" />
+								</a>
+								<p class="cmall-tit"><a href="http://demo.ciboard.co.kr/pro/item/sample-b" title="샘플상품 B">샘플상품 B</a></p>
+								<p class="cmall-txt">이것은 샘플상품 B입니다</p>
+								<ul class="cmall-detail">
+								   <li><i class="fa fa-heart"></i> <span class="detail-tit">찜</span> 1</li>
+								   <li><i class="fa fa-shopping-cart"></i> <span class="detail-tit">구매</span> 0</li>
+								   <li class="cmall-price pull-right"><span>20,000</span>원</li>
+								</ul>
+							 </div>
+						  </li>
+								   <li class="col-xs-6 col-sm-6 col-md-4 col-lg-4 cmall-list-col">
+							 <div class="thumbnail" >
+								<a href="http://demo.ciboard.co.kr/pro/item/sample-c" title="샘플상품 C">
+								   <img src="http://demo.ciboard.co.kr/pro/uploads/cache/cmallitem/2015/07/thumb-7a31d2878620564e1ca27c5208cb5332_420x300.jpg" alt="샘플상품 C" title="샘플상품 C" />
+								</a>
+								<p class="cmall-tit"><a href="http://demo.ciboard.co.kr/pro/item/sample-c" title="샘플상품 C">샘플상품 C</a></p>
+								<p class="cmall-txt">요약설명입니다</p>
+								<ul class="cmall-detail">
+								   <li><i class="fa fa-heart"></i> <span class="detail-tit">찜</span> 2</li>
+								   <li><i class="fa fa-shopping-cart"></i> <span class="detail-tit">구매</span> 0</li>
+								   <li class="cmall-price pull-right"><span>7,000</span>원</li>
+								</ul>
+							 </div>
+						  </li>
+								   <li class="col-xs-6 col-sm-6 col-md-4 col-lg-4 cmall-list-col">
+							 <div class="thumbnail" >
+								<a href="http://demo.ciboard.co.kr/pro/item/sample-d" title="샘플상품 D">
+								   <img src="http://demo.ciboard.co.kr/pro/uploads/cache/cmallitem/2015/07/thumb-67c84aaec242806a54b2eb476a6b9068_420x300.jpg" alt="샘플상품 D" title="샘플상품 D" />
+								</a>
+								<p class="cmall-tit"><a href="http://demo.ciboard.co.kr/pro/item/sample-d" title="샘플상품 D">샘플상품 D</a></p>
+								<p class="cmall-txt">간단한 설명입니다</p>
+								<ul class="cmall-detail">
+								   <li><i class="fa fa-heart"></i> <span class="detail-tit">찜</span> 3</li>
+								   <li><i class="fa fa-shopping-cart"></i> <span class="detail-tit">구매</span> 0</li>
+								   <li class="cmall-price pull-right"><span>17,000</span>원</li>
+								</ul>
+							 </div>
+						  </li>
+								   <li class="col-xs-6 col-sm-6 col-md-4 col-lg-4 cmall-list-col">
+							 <div class="thumbnail" >
+								<a href="http://demo.ciboard.co.kr/pro/item/sample-e" title="샘플상품 E">
+								   <img src="http://demo.ciboard.co.kr/pro/uploads/cache/cmallitem/2015/07/thumb-4b9c079ad44b163826b0c620dad70c77_420x300.jpg" alt="샘플상품 E" title="샘플상품 E" />
+								</a>
+								<p class="cmall-tit"><a href="http://demo.ciboard.co.kr/pro/item/sample-e" title="샘플상품 E">샘플상품 E</a></p>
+								<p class="cmall-txt">요약설명이지요</p>
+								<ul class="cmall-detail">
+								   <li><i class="fa fa-heart"></i> <span class="detail-tit">찜</span> 1</li>
+								   <li><i class="fa fa-shopping-cart"></i> <span class="detail-tit">구매</span> 0</li>
+								   <li class="cmall-price pull-right"><span>21,000</span>원</li>
+								</ul>
+							 </div>
+						  </li>
+								   <li class="col-xs-6 col-sm-6 col-md-4 col-lg-4 cmall-list-col">
+							 <div class="thumbnail" >
+								<a href="http://demo.ciboard.co.kr/pro/item/sample-f" title="샘플상품 F">
+								   <img src="http://demo.ciboard.co.kr/pro/uploads/cache/cmallitem/2015/07/thumb-941f97910a8627e0b67b20f997a427f1_420x300.jpg" alt="샘플상품 F" title="샘플상품 F" />
+								</a>
+								<p class="cmall-tit"><a href="http://demo.ciboard.co.kr/pro/item/sample-f" title="샘플상품 F">샘플상품 F</a></p>
+								<p class="cmall-txt">이것은 기본설명입니다</p>
+								<ul class="cmall-detail">
+								   <li><i class="fa fa-heart"></i> <span class="detail-tit">찜</span> 1</li>
+								   <li><i class="fa fa-shopping-cart"></i> <span class="detail-tit">구매</span> 0</li>
+								   <li class="cmall-price pull-right"><span>12,300</span>원</li>
+								</ul>
+							 </div>
+						  </li>
+								   <li class="col-xs-6 col-sm-6 col-md-4 col-lg-4 cmall-list-col">
+							 <div class="thumbnail" >
+								<a href="http://demo.ciboard.co.kr/pro/item/sample-g" title="샘플상품 G">
+								   <img src="http://demo.ciboard.co.kr/pro/uploads/cache/cmallitem/2015/07/thumb-d7468ee1f3b0fb1e5e06ba71ba63f406_420x300.jpg" alt="샘플상품 G" title="샘플상품 G" />
+								</a>
+								<p class="cmall-tit"><a href="http://demo.ciboard.co.kr/pro/item/sample-g" title="샘플상품 G">샘플상품 G</a></p>
+								<p class="cmall-txt">기본설명입니다</p>
+								<ul class="cmall-detail">
+								   <li><i class="fa fa-heart"></i> <span class="detail-tit">찜</span> 2</li>
+								   <li><i class="fa fa-shopping-cart"></i> <span class="detail-tit">구매</span> 0</li>
+								   <li class="cmall-price pull-right"><span>9,870</span>원</li>
+								</ul>
+							 </div>
+						  </li>
+							 </ul>
+				 </div>
+					</div>
+			  
+			</ul>
+		</div>
+
+		<div data-role="content" style="margin-bottom: 0px;display:none;">  
+
+			<ul id="item" data-role="listview" data-divider-theme="a" data-inset="true">
+
+				<li data-role="list-divider" role="heading">  
+					<span id='idx_board'></span>&nbsp; |&nbsp;
+					<span  id='m_update_time'></span>
+					<span id='m_hit' class="ui-li-count"></span>	
+				</li>
+
+				<li  data-theme="b" >
+					<a href="#boardPage" data-transition="slide">
+						<span  id='m_title'></span>
+						<p id='m_name'></p>               		
+						<p  id='m_rate'></p>
+						<span id='m_reply' class="ui-li-count"></span>
+					</a>
+				</li>
+			</ul>
+
+		</div>
+
+		<div align='center' id='indicator' style="margin-top:0px;display:none;">
+			<a data-role="button" data-inline="true" id = 'page' href="" style="width:20px; height:20px; font-size: 12px" data-transition="fade" >
+			</a>            
+		</div>
+		<br>
+
+		<div data-role="panel" id="sideMenu" data-position="left" data-display="overlay" data-dismissible="false">
+			<div class="ui-panel-inner">
+
+				<ul data-role="listview" data-theme="b" class="nav-search ui-listview ui-group-theme-a">
+
+					<li data-role="list-divider" data-theme="a" role="heading" class="ui-li-divider ui-bar-inherit" >
+						<div class="ui-block-a ui-bar-a root" style="width:100%;">
+							<center>▷ 스시(Study System) ◁</center> 
+						</div>
+					</li>
+
+					<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-inherit"  style="background:black"><font color="white"><%=__('menu1')%></font></li>
+					<li><a class="sideMenu1 ui-btn profile ui-btn ui-btn-icon-right ui-icon-carat-r"><%=__('login')%></a></li>
+					<li  data-icon="delete" class="ui-first-child"><a href="#" data-rel="close" class="sideCloseBtn ui-btn ui-btn-icon-right ui-icon-delete"><font color="red"><%=__('close')%></font></a></li>
+
+				</ul>
+
+			</div>
+		</div>
+		<!--panel-->
+	</div>
+
+	<!-- Home -->
+	<div data-role="page" id="loginDialog">
+
+		<div data-theme="a" data-role="header">
+			<h3>
+				<%=__("login")%>
+			</h3>
+		</div>
+
+		<div data-role="content">
+
+			<div data-role="fieldcontain" id = "m_email_form">
+				<label for="m_email">
+					<%=__("email")%>:
+				</label>
+				<input name="m_email" id="m_email" placeholder="" value="" type="text">
+			</div>
+
+			<div data-role="fieldcontain" id = "m_password_form">
+				<label for="m_password">
+					<%=__("password")%>:
+				</label>
+				<input name="m_password" id="m_password" placeholder="" value="" type="password">
+			</div>
+
+			<a data-theme="a" data-role="button" id="loginBtn" >
+				<%=__("login")%>
+			</a>
+
+			<a data-theme="a" data-role="button" href="#boardPage">
+				<%=__("cancel")%>
+			</a>
+		</div>
+
+	</div>
+
+</div>
+
+</body>
+</html>

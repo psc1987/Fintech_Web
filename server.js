@@ -71,9 +71,9 @@ app.get('/authResult', function(req, res){
       header: 'Content-type: application/x-www-form-urlencoded; charset=UTF-8',
       form: {
           code : code,
-          client_id : "l7xx62153d086573456a832a6fb43ba65b64",
-          client_secret: "458bd766bfc74fa391c662d41a7a4abf",
-          redirect_uri : 'http://localhost:3000/authResult',
+          client_id : "l7xx770fbba441f046489d2fdaac249dd8d1",
+          client_secret: "437b1ae162f64426a00e46b9f9157bf8",
+          redirect_uri : 'http://localhost:7777/authResult',
           grant_type : 'authorization_code'
       }
   }
